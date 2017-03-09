@@ -1,3 +1,5 @@
+package Activity03;
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -51,7 +53,18 @@ public class Shuffler {
 	 */
 	public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-	}
+                int [] shuffled = new int [values.length];
+                int k = 0;
+                for (int j = 0; j <= 2; j++) {
+                    shuffled[k] = values[j];
+                    k = k + 2;
+            }
+                k = 1;
+                for (int j = 2; j <= 4; j ++) {
+                    shuffled[k] = values[j];
+                    k = k + 2;
+                }
+        }
 
 	/**
 	 * Apply an "efficient selection shuffle" to the argument.
