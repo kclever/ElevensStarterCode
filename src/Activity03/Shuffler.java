@@ -20,8 +20,9 @@ public class Shuffler {
 		System.out.println("Results of " + SHUFFLE_COUNT +
 								 " consecutive perfect shuffles:");
 		int[] values1 = {0, 1, 2, 3};
+                perfectShuffle(values1);
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			perfectShuffle(values1);
+			
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values1.length; k++) {
 				System.out.print(" " + values1[k]);
@@ -55,14 +56,17 @@ public class Shuffler {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
                 int [] shuffled = new int [values.length];
                 int k = 0;
-                for (int j = 0; j <= 2; j++) {
+                for (int j = 0; j < values.length / 2; j++) {
                     shuffled[k] = values[j];
                     k = k + 2;
             }
                 k = 1;
-                for (int j = 2; j <= 4; j ++) {
+                for (int j = values.length / 2; j < values.length; j ++) {
                     shuffled[k] = values[j];
                     k = k + 2;
+                }
+                for(int i = 0; i < shuffled.length; i++) {
+                    values[i] = shuffled[i];
                 }
         }
 
@@ -79,5 +83,10 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+                int [] shuffled = new int [values.length];
+                for (int k = 0; k < values.length - 1; k ++) {
+                    int j = Math.random();
+                    values[j] = j;
+                }
 	}
 }
